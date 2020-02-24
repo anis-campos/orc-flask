@@ -5,5 +5,4 @@ fbapp/static/*.jpg
 app.db
 geckodriver.log
 .cache/
-fbapp/
 /.idea/
