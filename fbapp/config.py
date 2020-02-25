@@ -17,7 +17,7 @@ class ProductionConfig(Config):
 
 
 class StagingConfig(Config):
-    FB_APP_ID = "525369721720539"
+    FB_APP_ID = "489112975300358"
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://fbapp:fbapp@data:5432/fbapp'
 
 
