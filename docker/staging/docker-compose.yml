@@ -43,4 +43,3 @@ services:
       - POSTGRES_USER=fbapp
       - POSTGRES_DB=fbapp
 
-
