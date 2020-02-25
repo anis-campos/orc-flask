@@ -13,12 +13,12 @@ class Config(object):
 
 class ProductionConfig(Config):
     FB_APP_ID = "525369721720539"
-    SQLALCHEMY_DATABASE_URI = 'postgresql://data/fbapp'
+    SQLALCHEMY_DATABASE_URI = 'postgresql:/data/fbapp'
 
 
 class StagingConfig(Config):
     FB_APP_ID = "525369721720539"
-    SQLALCHEMY_DATABASE_URI = 'postgresql://data/fbapp'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://fbapp:fbapp@data:5432/fbapp'
 
 
 class DevelopmentConfig(Config):
