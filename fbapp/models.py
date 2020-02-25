@@ -24,13 +24,10 @@ class Content(db.Model):
         self.gender = gender
 
 
-db.create_all()
-
-
 def init_db():
     db.drop_all()
     db.create_all()
     db.session.add(Content("THIS IS SPARTAAAAAAAAA!!!", Gender.male))
-    db.session.add(Content("What's your favorite scary movie?", Gender.female))
+    db.session.add(Content("What's your favorite scary movie?", Gender.females))
     db.session.commit()
     lg.warning('Database initialized')

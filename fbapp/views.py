@@ -25,7 +25,7 @@ def index():
 def result():
     from .utils import find_content
     gender = request.args.get('gender')
-    description = find_content(gender).description
+    description = find_content(gender)
     user_name = request.args.get('first_name')
     uid = request.args.get('id')
     profile_pic = 'http://graph.facebook.com/' + uid + '/picture?type=large'

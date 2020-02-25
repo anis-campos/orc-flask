@@ -42,8 +42,8 @@
         var counter = 0;
 
         function checkLoginState() {
-            counter += 1
-            if (counter == 1) {
+            counter += 1;
+            if (counter === 1) {
                 FB.getLoginStatus(function (response) {
                     statusChangeCallback(response);
                 });
