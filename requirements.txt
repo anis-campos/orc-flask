@@ -1,6 +1,6 @@
 Flask==1.1.1
 Flask-SQLAlchemy==2.4.1
-Flask-Testing==0.7.1
+git+https://github.com/jarus/flask-testing
 Jinja2==2.11.1
 Pillow==7.0.0
 pytest==5.3.5
