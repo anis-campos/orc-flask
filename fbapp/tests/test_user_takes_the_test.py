@@ -3,7 +3,7 @@ from os import environ
 from flask_testing import LiveServerTestCase
 from selenium import webdriver
 
-import fbapp
+from .. import create_app
 from .. import models
 
 
@@ -11,7 +11,7 @@ class TestUserTakesTheTest(LiveServerTestCase):
     def create_app(self):
         if environ.get('FLASK_ENV') is None:
             environ["FLASK_ENV"] = "testing"
-        return fbapp.create_app()
+        return create_app()
 
     # Méthode exécutée avant chaque test
     def setUp(self):
