@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request
 
+from fbapp.utils import OpenGraphImage
 from . import config
 
 app = Flask(__name__)
@@ -41,13 +42,16 @@ def index():
 @app.route('/result/')
 def result():
     from .utils import find_content
-    img = 'tmp/sample.jpg'
-    og_url = url_for('index', img=img, _external=True)
+
     gender = request.args.get('gender')
-    description = find_content(gender)
+    description = find_content(gender).description
     user_name = request.args.get('first_name')
     uid = request.args.get('id')
     profile_pic = 'http://graph.facebook.com/' + uid + '/picture?type=large'
+
+    img = OpenGraphImage(uid, user_name, description).location
+    og_url = url_for('index', img=img, _external=True)
+
     return render_template('result.html',
                            user_name=user_name,
                            user_image=profile_pic,
