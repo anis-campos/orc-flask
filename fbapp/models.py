@@ -3,9 +3,8 @@ from enum import Enum
 
 from flask_sqlalchemy import SQLAlchemy
 
-from .views import app
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 class Gender(Enum):

@@ -1,4 +1,8 @@
-from fbapp import app
+from os import environ
+
+from fbapp import create_app
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    if environ.get('FLASK_ENV') is None:
+        environ["FLASK_ENV"] = "development"
+    create_app().run()
