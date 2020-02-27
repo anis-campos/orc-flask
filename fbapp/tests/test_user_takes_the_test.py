@@ -4,8 +4,7 @@ from flask_testing import LiveServerTestCase
 from selenium import webdriver
 
 from .. import create_app
-from .. import models
-
+from ..models import init_db
 
 class TestUserTakesTheTest(LiveServerTestCase):
     def create_app(self):
@@ -19,7 +18,7 @@ class TestUserTakesTheTest(LiveServerTestCase):
         # Le navigateur est Firefox
         self.driver = webdriver.Firefox()
         # Ajout de données dans la base.
-        models.init_db()
+        init_db()
 
     # Méthode exécutée après chaque test
     def tearDown(self):
